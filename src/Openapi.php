@@ -125,16 +125,16 @@ class Openapi
         ]);
     }
 
-    public function fansTopLiveOrderList(array $query)
+    public function fansTopLiveOrderList($liveStreamId, $startLiveTime, $endLiveTime, $start, $limit)
     {
-        return $this->httpGet('openapi/fanstop/live/order/list', array_merge([
+        return $this->httpGet('openapi/fanstop/live/order/list', [
             'app_id' => $this->appid,
-            'liveStreamId' => '',
-            'startLiveTime' => '',
-            'endLiveTime' => '',
-            'start' => '',
-            'limit' => '',
-        ], $query));
+            'liveStreamId' => $liveStreamId,
+            'startLiveTime' => $startLiveTime,
+            'endLiveTime' => $endLiveTime,
+            'start' => $start,
+            'limit' => $limit,
+        ]);
     }
 
     public function fansTopLiveBalanceAccount()
