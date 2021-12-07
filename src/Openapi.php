@@ -117,11 +117,11 @@ class Openapi
         ]);
     }
 
-    public function fansTopLiveOrderInfo(array $ksOrderIds)
+    public function fansTopLiveOrderInfo($ksOrderIds)
     {
         return $this->httpGet('/openapi/fanstop/live/order/info', [
             'app_id' => $this->appid,
-            'ksOrderIds' => json_encode($ksOrderIds)
+            'ksOrderIds' => implode(',', (array)$ksOrderIds)
         ]);
     }
 
